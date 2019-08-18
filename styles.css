@@ -204,6 +204,8 @@ label {
   background: var(--overlay-dark);
   border: 2px inset var(--black);
   border-radius: 10px;
+  text-align: center;
+  font-size: 1.5rem;
 }
 
 .search-area-button {
