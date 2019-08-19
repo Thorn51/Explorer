@@ -18,6 +18,14 @@ function searchArea() {
   });
 }
 
+// Format Query Parameters
+function formatQueryParams(params) {
+  const queryItems = Object.keys(params).map(
+    key => `${encodeURI(key)}=${encodeURI(params[key])}`
+  );
+  return queryItems.join("&");
+}
+
 // Fetch Google Maps data
 function fetchGoogleMapsData() {}
 
