@@ -219,6 +219,15 @@ label {
   cursor: pointer;
 }
 
+.invalid-entry {
+  width: 100%;
+  color: var(--cream);
+  text-align: center;
+  height: 50px;
+  padding-top: 25px;
+  background: var(--overlay-dark);
+}
+
 .results-container {
   width: 100%;
   height: 100%;

@@ -31,12 +31,14 @@
           id="js-area-search"
           class="hero-search-input"
           placeholder="City, State"
+          required
         />
         <input type="button" value="Explore" class="search-area-button" />
+        <p class="invalid-entry" hidden>Please Enter a Valid Search Area</p>
       </form>
     </div>
-    <div class="results-container">
-      <section class="activities">
+    <div class="activities-container" hidden>
+      <section class="activities" id="activity-scroll">
         <header class="results-page-header">
           <i class="material-icons">arrow_back_ios</i>
           <h2 class="header-title">Explore</h2>
@@ -58,6 +60,8 @@
           <h2 class="history">History</h2>
         </div>
       </section>
+    </div>
+    <div class="destination-cards-container" hidden>
       <section class="activity-options">
         <header class="results-page-header">
           <h2 class="header-title">Explore</h2>
@@ -69,6 +73,8 @@
         <div class="card" id="option-five"></div>
         <h3 class="load-more" id="js-load-more-options">More</h3>
       </section>
+    </div>
+    <div class="destination-details-container" hidden>
       <section class="activity-details">
         <div class="hero">
           <h3 class="activity-title"></h3>

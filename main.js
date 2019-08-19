@@ -1,5 +1,22 @@
 // User enters search area
-function searchArea() {}
+function searchArea() {
+  $(".search-area-button").on("click", function() {
+    event.preventDefault();
+    let $searchArea = $("#js-area-search").val();
+    if ($searchArea.length == 0) {
+      $(".invalid-entry").show();
+    } else {
+      $(".invalid-entry").hide();
+      $(".activities-container").show();
+      $([document.documentElement, document.body]).animate(
+        {
+          scrollTop: $("#activity-scroll").offset().top
+        },
+        1000
+      );
+    }
+  });
+}
 
 // Fetch Google Maps data
 function fetchGoogleMapsData() {}
@@ -28,4 +45,5 @@ function selectNewDestination() {}
 // document ready
 $(document).ready(function() {
   console.log("Explorer ready, adventure awaits!");
+  searchArea();
 });
