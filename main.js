@@ -14,6 +14,7 @@ function searchArea() {
         },
         1000
       );
+      fetchGoogleMapsData($searchArea);
     }
   });
 }
@@ -27,7 +28,18 @@ function formatQueryParams(params) {
 }
 
 // Fetch Google Maps data
-function fetchGoogleMapsData() {}
+function fetchGoogleMapsData(search) {
+  baseUrl =
+    "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?";
+  const mapParams = {
+    input: search,
+    inputtype: "textquery",
+    key: "AIzaSyBPiFr8wlY10QwG8GX0cbBzN8ug1OkVB8A"
+  };
+  let endPoint = formatQueryParams(mapParams);
+  let searchUrl = baseUrl + endPoint;
+  console.log(searchUrl);
+}
 
 // User selects hiking activity type
 function fetchHikingData() {}
