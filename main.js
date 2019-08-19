@@ -19,27 +19,37 @@ function searchArea() {
   });
 }
 
-// Format Query Parameters
-function formatQueryParams(params) {
-  const queryItems = Object.keys(params).map(
-    key => `${encodeURI(key)}=${encodeURI(params[key])}`
-  );
-  return queryItems.join("&");
+// Initialize Google Maps
+let map;
+
+function initMap() {
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 39.5501, lng: -105.7821 },
+    zoom: 5
+  });
 }
 
+// Format Query Parameters
+// function formatQueryParams(params) {
+//   const queryItems = Object.keys(params).map(
+//     key => `${encodeURI(key)}=${encodeURI(params[key])}`
+//   );
+//   return queryItems.join("&");
+// }
+
 // Fetch Google Maps data
-function fetchGoogleMapsData(search) {
-  baseUrl =
-    "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?";
-  const mapParams = {
-    input: search,
-    inputtype: "textquery",
-    key: "AIzaSyBPiFr8wlY10QwG8GX0cbBzN8ug1OkVB8A"
-  };
-  let endPoint = formatQueryParams(mapParams);
-  let searchUrl = baseUrl + endPoint;
-  console.log(searchUrl);
-}
+// function fetchGoogleMapsData(search) {
+//   baseUrl =
+//     "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?";
+//   const mapParams = {
+//     input: search,
+//     inputtype: "textquery",
+//     key: "AIzaSyBPiFr8wlY10QwG8GX0cbBzN8ug1OkVB8A"
+//   };
+//   let endPoint = formatQueryParams(mapParams);
+//   let searchUrl = baseUrl + endPoint;
+//   console.log(searchUrl);
+// }
 
 // User selects hiking activity type
 function fetchHikingData() {}

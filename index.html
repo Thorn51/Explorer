@@ -37,12 +37,13 @@
         <p class="invalid-entry" hidden>Please Enter a Valid Search Area</p>
       </form>
     </div>
-    <div class="activities-container" hidden>
+    <div class="activities-container">
       <section class="activities" id="activity-scroll">
         <header class="results-page-header">
           <i class="material-icons">arrow_back_ios</i>
           <h2 class="header-title">Explore</h2>
         </header>
+        <div id="map"></div>
         <h3 class="activity-instructions">Select your Activity</h3>
         <div class="card" id="activity-one">
           <h2 class="hike">Hike</h2>
@@ -93,5 +94,10 @@
       crossorigin="anonymous"
     ></script>
     <script src="main.js"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiFr8wlY10QwG8GX0cbBzN8ug1OkVB8A&callback=initMap"
+      async
+      defer
+    ></script>
   </body>
 </html>
