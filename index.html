@@ -23,19 +23,6 @@
         <h1 class="hero-title">Explorer</h1>
         <h3 class="hero-tagline">find today's outdoor adventure...</h3>
       </div>
-      <form action="#" class="hero-form">
-        <label for="area-input">Where do you want to explore?</label>
-        <input
-          type="text"
-          name="area-input"
-          id="js-area-search"
-          class="hero-search-input"
-          placeholder="City, State"
-          required
-        />
-        <input type="button" value="Explore" class="search-area-button" />
-        <p class="invalid-entry" hidden>Please Enter a Valid Search Area</p>
-      </form>
     </div>
     <div class="activities-container">
       <section class="activities" id="activity-scroll">
@@ -43,6 +30,10 @@
           <i class="material-icons">arrow_back_ios</i>
           <h2 class="header-title">Explore</h2>
         </header>
+        <div class="search-container">
+          <input id="pac-input" class="controls" type="text" placeholder="Where do you want to explore?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Where do you want to explore?'" ></input>
+        </div>
+        
         <div id="map"></div>
         <h3 class="activity-instructions">Select your Activity</h3>
         <div class="card" id="activity-one">
@@ -95,7 +86,7 @@
     ></script>
     <script src="main.js"></script>
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiFr8wlY10QwG8GX0cbBzN8ug1OkVB8A&callback=initMap"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBPiFr8wlY10QwG8GX0cbBzN8ug1OkVB8A&callback=initMap&libraries=places"
       async
       defer
     ></script>

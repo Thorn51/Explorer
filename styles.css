@@ -198,14 +198,17 @@ label {
   font-weight: bolder;
 }
 
-.hero-search-input {
+search-container {
   width: 80%;
-  height: 40px;
-  background: var(--overlay-dark);
-  border: 2px inset var(--black);
-  border-radius: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#pac-input {
+  width: 100%;
+  height: 50px;
   text-align: center;
-  font-size: 1.5rem;
+  margin-top: 15px;
 }
 
 .search-area-button {
