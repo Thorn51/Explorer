@@ -1,4 +1,6 @@
-// User enters search area
+// User Search Lat and Long
+let userLatitude;
+let userLongitude;
 
 // Initialize Google Maps
 function initMap() {
@@ -59,6 +61,11 @@ function initMap() {
           position: place.geometry.location
         })
       );
+
+      // Get user search longitude and latitude
+      let userPosition = place.geometry.location;
+      userLatitude = userPosition.lat();
+      userLongitude = userPosition.lng();
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.

@@ -158,7 +158,7 @@ body {
   background: url("/assets/images/hero_image-min.jpg");
   background-position: center;
   background-size: cover;
-  height: 100vh;
+  height: 35vh;
   width: 100vw;
 }
 
@@ -180,35 +180,19 @@ body {
   margin-top: 25px;
 }
 
-.hero-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  padding: 15px;
-  opacity: 1;
-  margin-top: 75px;
-}
-
-label {
-  width: 100%;
-  color: var(--cream);
-  text-align: center;
-  margin-bottom: 10px;
-  font-weight: bolder;
-}
-
 search-container {
-  width: 80%;
-  margin-right: auto;
-  margin-left: auto;
+  display: inline-block;
+  width: 100%;
 }
 
 #pac-input {
   width: 100%;
   height: 50px;
   text-align: center;
-  margin-top: 15px;
+  color: var(--black);
+  font-size: 1.2rem;
+  background: var(--blue);
+  border: solid 2px var(--silver);
 }
 
 .search-area-button {
