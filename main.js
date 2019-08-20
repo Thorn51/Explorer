@@ -124,4 +124,7 @@ function selectNewDestination() {}
 // document ready
 $(document).ready(function() {
   console.log("Explorer ready, adventure awaits!");
+  $("body").append(
+    `<script src=${googleApiKey.scriptSrc} async defer><script>`
+  );
 });
