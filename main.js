@@ -75,40 +75,37 @@ function initMap() {
       }
     });
     map.fitBounds(bounds);
+    fetchHikingProjectData();
   });
 }
 
 // Format Query Parameters
-// function formatQueryParams(params) {
-//   const queryItems = Object.keys(params).map(
-//     key => `${encodeURI(key)}=${encodeURI(params[key])}`
-//   );
-//   return queryItems.join("&");
-// }
+function formatQueryParams(params) {
+  const queryItems = Object.keys(params).map(
+    key => `${encodeURI(key)}=${encodeURI(params[key])}`
+  );
+  return queryItems.join("&");
+}
 
-// Fetch Google Maps data
-// function fetchGoogleMapsData(search) {
-//   baseUrl =
-//     "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?";
-//   const mapParams = {
-//     input: search,
-//     inputtype: "textquery",
-//     key: "AIzaSyBPiFr8wlY10QwG8GX0cbBzN8ug1OkVB8A"
-//   };
-//   let endPoint = formatQueryParams(mapParams);
-//   let searchUrl = baseUrl + endPoint;
-//   console.log(searchUrl);
-//   fetch(searchUrl)
-//     .then(function(response) {
-//       return response.json();
-//     })
-//     .then(function(data) {
-//       console.log(data);
-//     });
-// }
-
-// User selects hiking activity type
-function fetchHikingData() {}
+// Fetch Hiking Project data
+function fetchHikingProjectData() {
+  baseUrl = hikingProjectApi.baseUrl;
+  const params = {
+    lat: userLatitude,
+    lon: userLongitude,
+    key: hikingProjectApi.key
+  };
+  let endPoint = formatQueryParams(params);
+  let searchUrl = hikingProjectApi.baseUrl + endPoint;
+  console.log(searchUrl);
+  fetch(searchUrl)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(data) {
+      console.log(data);
+    });
+}
 
 // User selects destination
 function selectDestination() {}
@@ -132,6 +129,6 @@ function selectNewDestination() {}
 $(document).ready(function() {
   console.log("Explorer ready, adventure awaits!");
   $("body").append(
-    `<script src=${googleApiKey.scriptSrc} async defer><script>`
+    `<script src=${googleMapsApi.scriptSrc} async defer><script>`
   );
 });
