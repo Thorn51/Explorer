@@ -8,12 +8,13 @@ function initMap() {
     center: { lat: 37.0902, lng: -95.7129 },
     zoom: 4,
     disableDefaultUI: true,
-    mapTypeId: "roadmap"
+    mapTypeId: "terrain"
   });
 
   // Create the search box and link it to the UI element.
   var input = document.getElementById("pac-input");
   var searchBox = new google.maps.places.SearchBox(input);
+  console.log(input);
   // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
@@ -49,7 +50,7 @@ function initMap() {
         size: new google.maps.Size(71, 71),
         origin: new google.maps.Point(0, 0),
         anchor: new google.maps.Point(17, 34),
-        scaledSize: new google.maps.Size(25, 25)
+        scaledSize: new google.maps.Size(50, 50)
       };
 
       // Create a marker for each place.
