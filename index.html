@@ -17,6 +17,7 @@
     <title>Explorer | Find an Adventure</title>
   </head>
   <body>
+    
     <!-- HERO -->
     <div class="hero-container">
       <div class="hero-text-container">
@@ -25,43 +26,44 @@
       </div>
     </div>
     
-    <div class="search-container">
-      <input id="pac-input" class="controls" type="text" placeholder="Where do you want to explore?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Where do you want to explore?'" ></input>
+    <!-- Map -->
+    <div class="map-activities-container">
+      <div class="search-container">
+        <input id="pac-input" class="controls" type="text" placeholder="Enter area to explore (City)?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Where do you want to explore?'" ></input>
+      </div>
+      <div id="map"></div>
+      <div class="activities-container" hidden>
+        <div class="instructions-container">
+          <h3 class="activity-instructions">What do you want to do?</h3>
+        </div>
+
+       <!-- Activities  -->
+        <section class="activities">
+          <div class="card" id="activity-hiking">
+            <h2 class="hike">Go Hiking</h2>
+          </div>
+          <div class="card" id="activity-camping">
+            <h2 class="camp">Go Camping - Placeholder (Not Active)</h2>
+          </div>
+          <div class="card" id="activity-cycling">
+            <h2 class="cycle">Go Cycling - Placeholder (Not Active)</h2>
+          </div>
+          <div class="card" id="activity-fishing">
+            <h2 class="fish">Go Fishing - Placeholder (Not Active)</h2>
+          </div>
+        </section>
+      </div>
     </div>
-    <div id="map"></div>
-    
-    <h3 class="activity-instructions">What do you want to do?</h3>
-    
-    <section class="activities" id="activity-scroll">
-      <div class="card" id="activity-hiking">
-        <h2 class="hike">Go Hiking</h2>
-      </div>
-      <div class="card" id="activity-camping">
-        <h2 class="camp">Go Camping - Placeholder (Not Active)</h2>
-      </div>
-      <div class="card" id="activity-cycling">
-        <h2 class="cycle">Go Cycling - Placeholder (Not Active)</h2>
-      </div>
-      <div class="card" id="activity-fishing">
-        <h2 class="fish">Go Fishing - Placeholder (Not Active)</h2>
-      </div>
-    </section>
    
    
    
     <div class="destination-cards-container" hidden>
       <section class="activity-options">
-        <header class="results-page-header">
-          <h2 class="header-title">Explore</h2>
-        </header>
-        <div class="card" id="option-one"></div>
-        <div class="card" id="option-two"></div>
-        <div class="card" id="option-three"></div>
-        <div class="card" id="option-four"></div>
-        <div class="card" id="option-five"></div>
-        <h3 class="load-more" id="js-load-more-options">More</h3>
+    
       </section>
     </div>
+    
+    
     <div class="destination-details-container" hidden>
       <section class="activity-details">
         <div class="hero">

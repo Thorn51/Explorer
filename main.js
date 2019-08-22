@@ -1,6 +1,7 @@
 // User Search Lat and Long
 let userLatitude;
 let userLongitude;
+let hikeArray;
 
 // Initialize Google Maps
 function initMap() {
@@ -76,6 +77,7 @@ function initMap() {
       }
     });
     map.fitBounds(bounds);
+    $(".activities-container").removeAttr("hidden");
     fetchHikingProjectData();
   });
 }
@@ -103,9 +105,37 @@ function fetchHikingProjectData() {
     .then(function(response) {
       return response.json();
     })
-    .then(function(data) {
-      console.log(data);
+    .then(function(hikingData) {
+      goHiking(hikingData);
     });
+}
+
+//User selects hiking activity
+function goHiking(data) {
+  console.log(data.trails);
+  // console.log(data[0].name);
+  // let trailDetails = hikingData.trails;
+  $("#activity-hiking").on("click", function() {
+    $(".destination-cards-container").removeAttr("hidden");
+    $(".map-activities-container").hide();
+    if (data.trails.length > 4) {
+      for (let i = 0; i < 5; i++) {
+        $(".activity-options").append(
+          `<div class="card" id="option-${i}"><h1 class="destination-title">${
+            data.trails[i].name
+          }</h1></div>`
+        );
+      }
+    } else {
+      for (let i = 0; i < data.trails.length; i++) {
+        $(".activity-options").appendTo(
+          `<div class="card" id="option-${i}"><h1 class="destination-title">${
+            data.trails[i].name
+          }</h1></div>`
+        );
+      }
+    }
+  });
 }
 
 // User selects destination
