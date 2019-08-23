@@ -1,4 +1,4 @@
 Requirements: 
-    - Use fetch to asynchronously load data form one or more APIs
-    - Use jQuery's DOM traversal and manipulation functionality to display the data from the API to ht euser in an interesting way
-    - Use jQuery's event listening capabilities to respond to user actions
+    - Use fetch to asynchronously load data form one or more APIs @done
+    - Use jQuery's DOM traversal and manipulation functionality to display the data from the API to  the user in an interesting way @done
+    - Use jQuery's event listening capabilities to respond to user actions @done
