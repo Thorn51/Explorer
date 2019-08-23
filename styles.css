@@ -129,6 +129,7 @@ table {
 
 body,
 html {
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
 }
@@ -186,14 +187,15 @@ search-container {
 }
 
 #pac-input {
-  width: 100%;
+  width: 99%;
   height: 50px;
   text-align: center;
   color: var(--cream);
-  font-size: 1.2rem;
+  font-size: 1rem;
   background: var(--black);
-  border: solid 2px var(--blue);
+  border: solid 1px var(--blue);
   font-weight: bold;
+  padding: 0;
 }
 
 ::placeholder {
