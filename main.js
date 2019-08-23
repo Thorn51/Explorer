@@ -113,13 +113,13 @@ function fetchHikingProjectData() {
 function goHiking(data) {
   console.log(data.trails);
   $("#activity-hiking").on("click", function() {
-    $(".remove").remove();
+    $(".destination-card").remove();
     $(".activities-container").slideUp();
     $(".destination-cards-container").show();
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
         $(".destination-options").append(
-          `<div class="remove"> 
+          ` 
           <div class="destination-card" id="${
             data.trails[i].id
           }"><h1 class="destination-title">${
@@ -129,13 +129,13 @@ function goHiking(data) {
           }"></div><h3>Hiking Project: <a href="${
             data.trails[i].url
           }" target="_blank">More Info</a></div>
-          </div>`
+          `
         );
       }
     } else {
       for (let i = 0; i < data.trails.length; i++) {
         $(".destination-options").append(
-          `<div class="remove"> 
+          `
           <div class="destination-card" id="${
             data.trails[i].id
           }"><h1 class="destination-title">${
@@ -145,7 +145,7 @@ function goHiking(data) {
           }"></div><h3>Hiking Project: <a href="${
             data.trails[i].url
           }" target="_blank">More Info</a></div>
-          </div>`
+          `
         );
       }
     }
