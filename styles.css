@@ -168,7 +168,6 @@ body {
   background: var(--overlay-dark);
   text-align: center;
   color: var(--cream);
-  padding: 15px;
 }
 
 .hero-title {
@@ -181,13 +180,8 @@ body {
   margin-top: 25px;
 }
 
-search-container {
-  display: inline-block;
-  width: 100%;
-}
-
 #pac-input {
-  width: 99%;
+  width: 99.9%;
   height: 50px;
   text-align: center;
   color: var(--cream);
