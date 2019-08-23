@@ -1,7 +1,6 @@
 // User Search Lat and Long
 let userLatitude;
 let userLongitude;
-let hikeArray;
 
 // Initialize Google Maps
 function initMap() {
@@ -77,7 +76,8 @@ function initMap() {
       }
     });
     map.fitBounds(bounds);
-    $(".activities-container").removeAttr("hidden");
+    $(".remove").remove();
+    $(".activities-container").slideDown("slow");
     fetchHikingProjectData();
   });
 }
@@ -113,33 +113,56 @@ function fetchHikingProjectData() {
 //User selects hiking activity
 function goHiking(data) {
   console.log(data.trails);
-  // console.log(data[0].name);
-  // let trailDetails = hikingData.trails;
   $("#activity-hiking").on("click", function() {
-    $(".destination-cards-container").removeAttr("hidden");
-    $(".map-activities-container").hide();
+    $(".activities-container").slideUp();
+    $(".destination-cards-container").show();
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
-        $(".activity-options").append(
-          `<div class="card" id="option-${i}"><h1 class="destination-title">${
+        $(".destination-options").append(
+          `<div class="remove"> 
+          <div class="destination-card" id="${
+            data.trails[i].id
+          }"><h1 class="destination-title">${
             data.trails[i].name
-          }</h1></div>`
+          }</h1><div class="details"</div><h3>Description:</h3><p>lorem30</p> <div class="hike-image-container"><img src="${
+            data.trails[i].imgSmall
+          }"></div><h3>Hiking Project: <a href="${
+            data.trails[i].url
+          }" target="_blank">More Info</a></div>
+          </div>`
         );
       }
     } else {
       for (let i = 0; i < data.trails.length; i++) {
-        $(".activity-options").appendTo(
-          `<div class="card" id="option-${i}"><h1 class="destination-title">${
+        $(".destination-options").append(
+          `<div class="destination-card" id="${
+            data.trails[i].id
+          }"><h1 class="destination-title">${
             data.trails[i].name
-          }</h1></div>`
+          }</h1><div class="details"</div><h3>Description:</h3> <p>lorem30</p> <img src="${
+            data.trails[i].imgSmall
+          }"><h3>Hiking Project: <a href="${
+            data.trails[i].url
+          }" target="_blank">More Info</a></div>`
         );
       }
     }
+    selectDestination();
   });
 }
 
 // User selects destination
-function selectDestination() {}
+function selectDestination() {
+  $(".destination-card").on("click", function(event) {
+    $(event.currentTarget)
+      .children()
+      .slideDown("slow");
+    $(event.currentTarget)
+      .siblings(".destination-card")
+      .children(".details")
+      .slideUp();
+  });
+}
 
 // User wants to search a new area
 function restartSearch() {}

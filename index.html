@@ -27,18 +27,16 @@
     </div>
     
     <!-- Map -->
-    <div class="map-activities-container">
+    
       <div class="search-container">
         <input id="pac-input" class="controls" type="text" placeholder="Enter area to explore (City)?" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Where do you want to explore?'" ></input>
       </div>
       <div id="map"></div>
-      <div class="activities-container" hidden>
-        <div class="instructions-container">
-          <h3 class="activity-instructions">What do you want to do?</h3>
-        </div>
 
-       <!-- Activities  -->
+<!-- Activities  -->
+      <div class="activities-container">
         <section class="activities">
+          <h3 class="activity-instructions">What do you want to do?</h3>
           <div class="card" id="activity-hiking">
             <h2 class="hike">Go Hiking</h2>
           </div>
@@ -57,26 +55,11 @@
    
    
    
-    <div class="destination-cards-container" hidden>
-      <section class="activity-options">
-    
-      </section>
+    <div class="destination-cards-container">
+        <section class="destination-options">
+        </section>
     </div>
-    
-    
-    <div class="destination-details-container" hidden>
-      <section class="activity-details">
-        <div class="hero">
-          <h3 class="activity-title"></h3>
-          <p class="activity-location"></p>
-        </div>
-        <div class="description">
-          <p class="description-text"></p>
-        </div>
-        <div class="map"></div>
-        <div class="details"></div>
-      </section>
-    </div>
+   
     <script
       src="https://code.jquery.com/jquery-3.4.1.js"
       integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="

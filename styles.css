@@ -204,19 +204,16 @@ search-container {
   margin-top: 15px;
 }
 
-.instructions-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  background: var(--overlay-light);
-  margin: 15px 0px 0px 0px;
-}
-
 .activity-instructions {
+  height: 50px;
+  text-align: center;
   font-size: 1.2rem;
   color: var(--cream);
+  padding-top: 25px;
+}
+
+.activities-container {
+  display: none;
 }
 
 .activities {
@@ -235,13 +232,25 @@ search-container {
 }
 
 .destination-cards-container {
-  background: var(--cream);
-  height: 500px;
+  display: none;
+  height: fit-content;
   width: 100%;
 }
 
-.activity-options {
-  height: 500px;
+.destination-options {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   width: 100%;
-  background: var(--silver);
+}
+
+.destination-card {
+  width: 90%;
+  margin: 0 auto 15px auto;
+  background: var(--cream);
+  border: 2px solid var(--cream);
+}
+
+.details {
+  display: none;
 }
