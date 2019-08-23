@@ -76,7 +76,6 @@ function initMap() {
       }
     });
     map.fitBounds(bounds);
-    $(".remove").remove();
     $(".activities-container").slideDown("slow");
     fetchHikingProjectData();
   });
@@ -114,6 +113,7 @@ function fetchHikingProjectData() {
 function goHiking(data) {
   console.log(data.trails);
   $("#activity-hiking").on("click", function() {
+    $(".remove").remove();
     $(".activities-container").slideUp();
     $(".destination-cards-container").show();
     if (data.trails.length > 4) {
@@ -135,15 +135,17 @@ function goHiking(data) {
     } else {
       for (let i = 0; i < data.trails.length; i++) {
         $(".destination-options").append(
-          `<div class="destination-card" id="${
+          `<div class="remove"> 
+          <div class="destination-card" id="${
             data.trails[i].id
           }"><h1 class="destination-title">${
             data.trails[i].name
-          }</h1><div class="details"</div><h3>Description:</h3> <p>lorem30</p> <img src="${
+          }</h1><div class="details"</div><h3>Description:</h3><p>lorem30</p> <div class="hike-image-container"><img src="${
             data.trails[i].imgSmall
-          }"><h3>Hiking Project: <a href="${
+          }"></div><h3>Hiking Project: <a href="${
             data.trails[i].url
-          }" target="_blank">More Info</a></div>`
+          }" target="_blank">More Info</a></div>
+          </div>`
         );
       }
     }

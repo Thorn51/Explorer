@@ -198,10 +198,8 @@ search-container {
 
 #map {
   height: 250px;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 15px;
+  width: 100%;
+  margin: 0 auto 0 auto;
 }
 
 .activity-instructions {
@@ -235,6 +233,13 @@ search-container {
   display: none;
   height: fit-content;
   width: 100%;
+}
+
+.destination-instructions {
+  margin: 15px 0 15px 0;
+  font-size: 1.2rem;
+  color: var(--cream);
+  text-align: center;
 }
 
 .destination-options {
