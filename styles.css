@@ -362,4 +362,17 @@ span {
   .activities-container {
     width: 70%;
     margin: auto;
+  }
+}
+
+@media only screen and (min-width: 1400px) {
+  .activities-container {
+    width: 60%;
+    margin: auto;
+  }
+
+  .destination-cards-container {
+    width: 80%;
+    margin: auto;
+  }
 }
