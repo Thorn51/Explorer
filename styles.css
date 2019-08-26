@@ -178,6 +178,7 @@ body {
 .hero-tagline {
   font-size: 1.1rem;
   margin-top: 25px;
+  padding: 0 0 15px 0;
 }
 
 .map-container {
@@ -322,4 +323,43 @@ span {
   margin: 0 auto 25px auto;
   border: 2px solid var(--cream);
   border-radius: 15px;
+}
+
+@media only screen and (min-width: 450px) {
+  #map {
+    height: 300px;
+  }
+
+  ::placeholder {
+    font-size: 1.5rem;
+  }
+
+  #pac-input {
+    font-size: 1.5rem;
+  }
+
+  .activities-container {
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media only screen and (min-width: 750px) {
+  #map {
+    height: 400px;
+  }
+
+  ::placeholder {
+    font-size: 2rem;
+  }
+
+  #pac-input {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 950px) {
+  .activities-container {
+    width: 70%;
+    margin: auto;
 }
