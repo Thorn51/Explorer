@@ -73,6 +73,7 @@ function initMap() {
       }
     });
     map.fitBounds(bounds);
+    $("html, body").animate({ scrollTop: $("#map").offset().top }, 1000);
     $(".activities-container").slideDown("slow");
   });
 }
