@@ -252,6 +252,27 @@ body {
   background-size: 100% 100%;
 }
 
+#activity-camping {
+  background: url("assets/camping-min.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#activity-cycling {
+  background: url("assets/cycling.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+#activity-fishing {
+  background: url("assets/fishing.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .destination-cards-container {
   display: none;
   height: fit-content;
