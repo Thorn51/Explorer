@@ -9,7 +9,5 @@ let googleMapsApi = {
 
 let hikingProjectApi = {
   key: "200564154-8b844eb92fc5f5d2a046cf8a8b585663",
-  baseUrl: "https://www.hikingproject.com/data/get-trails?",
-  latitude: `${userLatitude}`,
-  longitude: `${userLongitude}`
+  baseUrl: "https://www.hikingproject.com/data/get-trails?"
 };

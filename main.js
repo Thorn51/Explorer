@@ -1,7 +1,3 @@
-// User Search Lat and Long
-let userLatitude;
-let userLongitude;
-
 // Initialize Google Maps
 function initMap() {
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -65,8 +61,9 @@ function initMap() {
 
       // Get user search longitude and latitude
       let userPosition = place.geometry.location;
-      userLatitude = userPosition.lat();
-      userLongitude = userPosition.lng();
+      let searchLatitude = userPosition.lat();
+      let searchLongitude = userPosition.lng();
+      fetchHikingProjectData(searchLatitude, searchLongitude);
 
       if (place.geometry.viewport) {
         // Only geocodes have viewport.
@@ -77,7 +74,6 @@ function initMap() {
     });
     map.fitBounds(bounds);
     $(".activities-container").slideDown("slow");
-    fetchHikingProjectData();
   });
 }
 
@@ -90,11 +86,11 @@ function formatQueryParams(params) {
 }
 
 // Fetch Hiking Project data
-function fetchHikingProjectData() {
+function fetchHikingProjectData(lat, lon) {
   baseUrl = hikingProjectApi.baseUrl;
   const params = {
-    lat: userLatitude,
-    lon: userLongitude,
+    lat: lat,
+    lon: lon,
     key: hikingProjectApi.key
   };
   let endPoint = formatQueryParams(params);
@@ -131,7 +127,10 @@ function goHiking(data) {
                   <p><span>Summary:</span> ${data.trails[i].summary}</p>
                   <p><span>Location:</span> ${data.trails[i].location}</p>
                   <p><span>Length:</span> ${data.trails[i].length} miles</p>
-                  <p><span>Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                  <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
+                  <p><span>High Point:</span> ${data.trails[i].high} feet</p>
+                  <p><span>User Rating:</span> ${data.trails[i].stars}/5</p>
+                  <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
             </div>
           </div>
@@ -153,7 +152,10 @@ function goHiking(data) {
                   <p><span>Summary:</span> ${data.trails[i].summary}</p>
                   <p><span>Location:</span> ${data.trails[i].location}</p>
                   <p><span>Length:</span> ${data.trails[i].length} miles</p>
-                  <p><span>Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                  <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
+                  <p><span>High Point:</span> ${data.trails[i].high} feet</p>
+                  <p><span>User Rating:</span> ${data.trails[i].stars}/5</p>
+                  <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
             </div>
           </div>
@@ -177,6 +179,16 @@ function selectDestination() {
       .slideUp();
   });
 }
+
+// Add marker to map when user selects destination card
+// function addMarker(trailPosition, trailName) {
+//   let marker = new google.maps.Marker({
+//     position: trailPosition,
+//     title: trailName,
+//     draggable: true,
+//     map: map
+//   });
+// }
 
 // User selects back button to select a different activity
 function backToActivities() {}
