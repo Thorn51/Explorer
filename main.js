@@ -110,6 +110,10 @@ function fetchHikingProjectData(lat, lon) {
 function goHiking(data) {
   console.log(data.trails);
   $("#activity-hiking, .load-more-hiking").on("click", function() {
+    $("html, body").animate(
+      { scrollTop: $("#activity-hiking").offset().top },
+      1000
+    );
     data.trails.sort(function() {
       return 0.5 - Math.random();
     });
