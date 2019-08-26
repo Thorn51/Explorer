@@ -181,19 +181,19 @@ body {
 }
 
 #pac-input {
-  width: 99.9%;
+  width: 100%;
   height: 50px;
   text-align: center;
-  color: var(--cream);
+  color: var(--black);
   font-size: 1rem;
-  background: var(--black);
-  border: solid 1px var(--blue);
+  background: var(--blue);
+  border: solid 2px var(--black);
   font-weight: bold;
   padding: 0;
 }
 
 ::placeholder {
-  color: var(--cream);
+  color: var(--black);
   font-weight: bold;
 }
 
@@ -203,49 +203,72 @@ body {
   margin: 0 auto 0 auto;
 }
 
-.activity-instructions {
-  height: 50px;
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--cream);
-  padding-top: 25px;
-}
-
 .activities-container {
   display: none;
 }
 
+.activity-instructions {
+  height: 25px;
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--cream);
+  margin-top: 10px;
+}
+
 .activities {
   display: flex;
-  flex-direction: column;
-  align-content: space-around;
-  width: 100%;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .card {
-  height: 50px;
-  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 150px;
+  width: 150px;
   background: var(--cream);
   margin: auto;
   margin-bottom: 15px;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+}
+
+.card-title {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bolder;
+  color: var(--cream);
+  background: var(--overlay-dark);
+}
+
+#activity-hiking {
+  background: url("assets/hiking_activity_background.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 .destination-cards-container {
   display: none;
   height: fit-content;
-  width: 100%;
+  width: 100% 100%;
 }
 
 .destination-instructions {
   margin: 15px 0 15px 0;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: var(--cream);
   text-align: center;
+  font-weight: bolder;
 }
 
 .destination-options {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   height: 100%;
   width: 100%;
 }
@@ -257,6 +280,23 @@ body {
   border: 2px solid var(--cream);
 }
 
-.details {
+.destination-details {
   display: none;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 5px;
+}
+
+.information p {
+  padding: 10px 0 0 0;
+  line-height: 1.3rem;
+}
+
+span {
+  font-weight: bolder;
 }

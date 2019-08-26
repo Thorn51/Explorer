@@ -119,16 +119,22 @@ function goHiking(data) {
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
         $(".destination-options").append(
-          ` 
-          <div class="destination-card" id="${
-            data.trails[i].id
-          }"><h1 class="destination-title">${
-            data.trails[i].name
-          }</h1><div class="details"</div><h3>Description:</h3><p>lorem30</p> <div class="hike-image-container"><img src="${
-            data.trails[i].imgSmall
-          }"></div><h3>Hiking Project: <a href="${
-            data.trails[i].url
-          }" target="_blank">More Info</a></div>
+          `
+          <div class="destination-card" id="${data.trails[i].id}">
+            <h2 class="card-title">${data.trails[i].name}</h2>
+            <div class="destination-details">
+              <div class="details-container"> 
+                <div class="hike-image-container">
+                  <img src="${data.trails[i].imgSmall}">
+                </div>
+                <div class="information"</div>
+                  <p><span>Summary:</span> ${data.trails[i].summary}</p>
+                  <p><span>Location:</span> ${data.trails[i].location}</p>
+                  <p><span>Length:</span> ${data.trails[i].length} miles</p>
+                  <p><span>Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                </div>
+            </div>
+          </div>
           `
         );
       }
@@ -136,15 +142,21 @@ function goHiking(data) {
       for (let i = 0; i < data.trails.length; i++) {
         $(".destination-options").append(
           `
-          <div class="destination-card" id="${
-            data.trails[i].id
-          }"><h1 class="destination-title">${
-            data.trails[i].name
-          }</h1><div class="details"</div><h3>Description:</h3><p>lorem30</p> <div class="hike-image-container"><img src="${
-            data.trails[i].imgSmall
-          }"></div><h3>Hiking Project: <a href="${
-            data.trails[i].url
-          }" target="_blank">More Info</a></div>
+          <div class="destination-card" id="${data.trails[i].id}">
+            <h2 class="card-title">${data.trails[i].name}</h2>
+            <div class="destination-details">
+              <div class="details-container"> 
+                <div class="hike-image-container">
+                  <img src="${data.trails[i].imgSmall}">
+                </div>
+                <div class="information"</div>
+                  <p><span>Summary:</span> ${data.trails[i].summary}</p>
+                  <p><span>Location:</span> ${data.trails[i].location}</p>
+                  <p><span>Length:</span> ${data.trails[i].length} miles</p>
+                  <p><span>Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                </div>
+            </div>
+          </div>
           `
         );
       }
@@ -160,17 +172,11 @@ function selectDestination() {
       .children()
       .slideDown("slow");
     $(event.currentTarget)
-      .siblings(".destination-card")
-      .children(".details")
+      .siblings()
+      .children(".destination-details")
       .slideUp();
   });
 }
-
-// User wants to search a new area
-function restartSearch() {}
-
-// Dom Changes for activity selection
-function addDestinationCards() {}
 
 // User selects back button to select a different activity
 function backToActivities() {}
