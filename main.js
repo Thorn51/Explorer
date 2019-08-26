@@ -91,7 +91,8 @@ function fetchHikingProjectData(lat, lon) {
   const params = {
     lat: lat,
     lon: lon,
-    key: hikingProjectApi.key
+    key: hikingProjectApi.key,
+    maxResults: 50
   };
   let endPoint = formatQueryParams(params);
   let searchUrl = hikingProjectApi.baseUrl + endPoint;
@@ -107,10 +108,12 @@ function fetchHikingProjectData(lat, lon) {
 
 //User selects hiking activity
 function goHiking(data) {
+  data.trails.sort(function() {
+    return 0.5 - Math.random();
+  });
   console.log(data.trails);
   $("#activity-hiking").on("click", function() {
     $(".destination-card").remove();
-    $(".activities-container").slideUp();
     $(".destination-cards-container").show();
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
@@ -129,7 +132,8 @@ function goHiking(data) {
                   <p><span>Length:</span> ${data.trails[i].length} miles</p>
                   <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
                   <p><span>High Point:</span> ${data.trails[i].high} feet</p>
-                  <p><span>User Rating:</span> ${data.trails[i].stars}/5</p>
+                  <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
+                  <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
             </div>
@@ -154,7 +158,8 @@ function goHiking(data) {
                   <p><span>Length:</span> ${data.trails[i].length} miles</p>
                   <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
                   <p><span>High Point:</span> ${data.trails[i].high} feet</p>
-                  <p><span>User Rating:</span> ${data.trails[i].stars}/5</p>
+                  <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
+                  <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
             </div>

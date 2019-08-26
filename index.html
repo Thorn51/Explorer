@@ -27,12 +27,15 @@
     </div>
     
     <!-- Map -->
-    <input id="pac-input" class="controls" type="text" placeholder="Enter area to explore.. state, city, park..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Where do you want to explore?'" ></input>
-    <div id="map"></div>
+    <div class="map-container">
+      <input id="pac-input" class="controls" type="text" placeholder="Enter area to explore.. state, city, park..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Where do you want to explore?'" ></input>
+      <div id="map"></div>
+    </div>
+    
 
 <!-- Activities  -->
       <div class="activities-container">
-        <h2 class="activity-instructions">What do you want to do?</h2>
+        <h2 class="instructions">What do you want to do?</h2>
         <section class="activities">
           <div class="card" id="activity-hiking">
             <h2 class="card-title">Go Hiking</h2>
@@ -53,7 +56,7 @@
    
    
     <div class="destination-cards-container">
-      <h3 class=destination-instructions>Select your destination</h3>
+      <h3 class=instructions>Select your destination</h3>
       <section class="destination-options">
       </section>
     </div>

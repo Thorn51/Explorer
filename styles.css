@@ -180,6 +180,15 @@ body {
   margin-top: 25px;
 }
 
+.map-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+}
+
 #pac-input {
   width: 100%;
   height: 50px;
@@ -187,9 +196,8 @@ body {
   color: var(--black);
   font-size: 1rem;
   background: var(--blue);
-  border: solid 2px var(--black);
+  border: solid 4px var(--black);
   font-weight: bold;
-  padding: 0;
 }
 
 ::placeholder {
@@ -205,14 +213,6 @@ body {
 
 .activities-container {
   display: none;
-}
-
-.activity-instructions {
-  height: 25px;
-  text-align: center;
-  font-size: 1.2rem;
-  color: var(--cream);
-  margin-top: 10px;
 }
 
 .activities {
@@ -257,7 +257,7 @@ body {
   width: 100% 100%;
 }
 
-.destination-instructions {
+.instructions {
   margin: 15px 0 15px 0;
   font-size: 1.5rem;
   color: var(--cream);
@@ -289,6 +289,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  align-content: center;
   padding: 5px;
 }
 
@@ -302,5 +303,7 @@ span {
 }
 
 .hike-image-container {
+  display: flex;
+  justify-content: center;
   padding: 0 25px 0 10px;
 }
