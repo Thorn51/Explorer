@@ -108,11 +108,11 @@ function fetchHikingProjectData(lat, lon) {
 
 //User selects hiking activity
 function goHiking(data) {
-  data.trails.sort(function() {
-    return 0.5 - Math.random();
-  });
   console.log(data.trails);
-  $("#activity-hiking").on("click", function() {
+  $("#activity-hiking, .load-more-hiking").on("click", function() {
+    data.trails.sort(function() {
+      return 0.5 - Math.random();
+    });
     $(".destination-card").remove();
     $(".destination-cards-container").show();
     if (data.trails.length > 4) {
@@ -194,15 +194,6 @@ function selectDestination() {
 //     map: map
 //   });
 // }
-
-// User selects back button to select a different activity
-function backToActivities() {}
-
-// Dom changes for destination selection
-function addDestinationDetails() {}
-
-//User selects back button to select a different destination
-function selectNewDestination() {}
 
 // document ready
 $(document).ready(function() {
