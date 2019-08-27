@@ -1,3 +1,4 @@
+//Stor data from the list of hikes generated in destination section
 let markerData = [];
 
 // Initialize Google Maps
@@ -124,7 +125,7 @@ function goHiking(data) {
     $(".destination-cards-container").show();
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
-        markerData[i] = new Hikes(
+        markerData[i] = new Hike(
           `${data.trails[i].name}`,
           `${data.trails[i].id}`,
           `${data.trails[i].latitude}`,
@@ -199,7 +200,7 @@ function selectDestination() {
 }
 
 // Create a new object with data from hiking locations
-function Hikes(name, id, lat, lon) {
+function Hike(name, id, lat, lon) {
   this.name = name;
   this.id = id;
   this.lat = lat;

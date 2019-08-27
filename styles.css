@@ -151,6 +151,8 @@ body {
   background: var(--black);
 }
 
+/* Hero */
+
 .hero-container {
   display: flex;
   flex-direction: column;
@@ -180,6 +182,8 @@ body {
   margin-top: 25px;
   padding: 0 0 15px 0;
 }
+
+/* Google places map */
 
 .map-container {
   display: flex;
@@ -211,6 +215,8 @@ body {
   width: 100%;
   margin: 0 auto 0 auto;
 }
+
+/* Activity Cards*/
 
 .activities-container {
   display: none;
@@ -325,6 +331,8 @@ body {
   left: 0;
 }
 
+/* Destination Cards */
+
 .destination-cards-container {
   display: none;
   height: fit-content;
@@ -400,6 +408,8 @@ span {
   cursor: pointer;
 }
 
+/* Media Queries */
+
 @media only screen and (min-width: 450px) {
   #map {
     height: 300px;
@@ -425,11 +435,11 @@ span {
   }
 
   ::placeholder {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   #pac-input {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
