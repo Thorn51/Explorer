@@ -391,6 +391,12 @@ span {
   padding: 0 25px 0 10px;
 }
 
+#map2 {
+  height: 100%;
+  width: 100%;
+  margin: 0 auto 0 auto;
+}
+
 .load-more-hiking {
   display: flex;
   align-content: center;

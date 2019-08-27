@@ -123,6 +123,7 @@ function fetchHikingProjectData(lat, lon) {
 function goHiking(data) {
   console.log(data.trails);
   $("#activity-hiking, .load-more-hiking").on("click", function() {
+    let mapNumber = 1;
     $("html, body").animate(
       { scrollTop: $("#activity-hiking").offset().top },
       1000
@@ -141,12 +142,16 @@ function goHiking(data) {
     // I created two for loops in order to avoid problems with smaller than expected data sets
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
+        // Map canvas number
+        mapNumber++;
+
         // Feeding results data into markerData array, intended to be used to place markers on map. Markers not functional yet
         markerData[i] = new Hike(
+          Number(`${mapNumber}`),
           `${data.trails[i].name}`,
-          `${data.trails[i].id}`,
-          `${data.trails[i].latitude}`,
-          `${data.trails[i].longitude}`
+          Number(`${data.trails[i].id}`),
+          Number(`${data.trails[i].latitude}`),
+          Number(`${data.trails[i].longitude}`)
         );
 
         // Create DOM elements. This should probably be a separate function
@@ -169,6 +174,7 @@ function goHiking(data) {
                   <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
+                <div id="map${mapNumber}></div>
             </div>
           </div>
           `
@@ -196,6 +202,7 @@ function goHiking(data) {
                   <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
+                <div id="map${mapNumber}></div>
             </div>
           </div>
           `
@@ -220,7 +227,8 @@ function selectDestination() {
 }
 
 // Object constructor that builds data for markerData array
-function Hike(name, id, lat, lon) {
+function Hike(mapNumber, name, id, lat, lon) {
+  this.mapNumber = mapNumber;
   this.name = name;
   this.id = id;
   this.lat = lat;
