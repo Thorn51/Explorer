@@ -1,3 +1,5 @@
+let markerData = [];
+
 // Initialize Google Maps
 function initMap() {
   var map = new google.maps.Map(document.getElementById("map"), {
@@ -122,6 +124,12 @@ function goHiking(data) {
     $(".destination-cards-container").show();
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
+        markerData[i] = new Hikes(
+          `${data.trails[i].name}`,
+          `${data.trails[i].id}`,
+          `${data.trails[i].latitude}`,
+          `${data.trails[i].longitude}`
+        );
         $(".destination-options").append(
           `
           <div class="destination-card" id="${data.trails[i].id}">
@@ -188,6 +196,14 @@ function selectDestination() {
       .children(".destination-details")
       .slideUp();
   });
+}
+
+// Create a new object with data from hiking locations
+function Hikes(name, id, lat, lon) {
+  this.name = name;
+  this.id = id;
+  this.lat = lat;
+  this.lon = lon;
 }
 
 // Add marker to map when user selects destination card
