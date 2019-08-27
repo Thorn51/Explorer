@@ -77,12 +77,7 @@ function initMap() {
     });
     map.fitBounds(bounds);
 
-    var hike1 = { lat: markerData[0].lat, lng: markerData[0].lon };
-    var map2 = new google.maps.Map(document.getElementById("map2"), {
-      zoom: 15,
-      center: hike1
-    });
-    var marker = new google.maps.Marker({ position: hike1, map: map2 });
+    // refocus page to show activity selections
     $("html, body").animate({ scrollTop: $("#map").offset().top }, 1000);
     $(".activities-container").slideDown("slow");
   });
@@ -230,7 +225,7 @@ function selectDestination() {
       .siblings()
       .children(".destination-details")
       .slideUp();
-    initMap2();
+    initDestinationMaps();
   });
 }
 
@@ -243,15 +238,22 @@ function Hike(mapNumber, name, id, lat, lon) {
   this.lon = lon;
 }
 
-// Initialize map 2 for destination card
+// Initialize maps for destination cards
 
-function initMap2() {
+function initDestinationMaps() {
   var hike1 = { lat: markerData[0].lat, lng: markerData[0].lon };
   var map2 = new google.maps.Map(document.getElementById("map2"), {
     zoom: 15,
     center: hike1
   });
   var marker = new google.maps.Marker({ position: hike1, map: map2 });
+
+  var hike2 = { lat: markerData[1].lat, lng: markerData[1].lon };
+  var map3 = new google.maps.Map(document.getElementById("map3"), {
+    zoom: 15,
+    center: hike2
+  });
+  var marker = new google.maps.Marker({ position: hike2, map: map3 });
 }
 
 // document ready
