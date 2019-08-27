@@ -174,7 +174,7 @@ function goHiking(data) {
                   <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
-                <div id="map${mapNumber}></div>
+                <div class="hike-location" id="map${mapNumber}"></div>
             </div>
           </div>
           `
@@ -202,7 +202,7 @@ function goHiking(data) {
                   <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
                 </div>
-                <div id="map${mapNumber}></div>
+                <div class="hike-location" id="map${mapNumber}"></div>
             </div>
           </div>
           `
@@ -223,6 +223,7 @@ function selectDestination() {
       .siblings()
       .children(".destination-details")
       .slideUp();
+    initMap2();
   });
 }
 
@@ -235,15 +236,16 @@ function Hike(mapNumber, name, id, lat, lon) {
   this.lon = lon;
 }
 
-// Add marker to map when user selects destination card
-// function addMarker(trailPosition, trailName) {
-//   let marker = new google.maps.Marker({
-//     position: trailPosition,
-//     title: trailName,
-//     draggable: true,
-//     map: map
-//   });
-// }
+// Initialize map 2 for destination card
+
+function initMap2() {
+  var hike1 = { lat: markerData[0].lat, lng: markerData[0].lon };
+  var map2 = new google.maps.Map(document.getElementById("map2"), {
+    zoom: 15,
+    center: hike1
+  });
+  var marker = new google.maps.Marker({ position: hike1, map: map2 });
+}
 
 // document ready
 $(document).ready(function() {
