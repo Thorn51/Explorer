@@ -377,7 +377,7 @@ body {
 }
 
 .information p {
-  padding: 10px 0 0 0;
+  padding: 10px 10px 0 0;
   line-height: 1.3rem;
 }
 
@@ -391,15 +391,10 @@ span {
   padding: 0 25px 0 10px;
 }
 
-#map2 {
-  height: 250px;
-  width: 250px;
-  margin: 0 auto 0 auto;
-}
-
 .hike-location {
   height: 250px;
-  width: 250px;
+  width: 100%;
+  margin: 25px 10px 10px 10px;
 }
 
 .load-more-hiking {
@@ -452,12 +447,20 @@ span {
   #pac-input {
     font-size: 1.5rem;
   }
+
+  .hike-location {
+    height: 350px;
+  }
 }
 
 @media only screen and (min-width: 950px) {
   .activities-container {
     width: 70%;
     margin: auto;
+  }
+
+  .hike-location {
+    height: 450px;
   }
 }
 
