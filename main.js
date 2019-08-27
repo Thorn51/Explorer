@@ -1,7 +1,7 @@
-//Stor data from the list of hikes generated in destination section
+//Store data from the list of hikes generated in destination section. The intent here is to feed back to Google maps for markers
 let markerData = [];
 
-// Initialize Google Maps
+// Initialize Google Maps and utilize Google places
 function initMap() {
   var map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 37.0902, lng: -95.7129 },
@@ -62,7 +62,7 @@ function initMap() {
         })
       );
 
-      // Get user search longitude and latitude
+      // Get user search longitude and latitude from Google Places to feed into Hiking Project API, this is required data for API params. This would be changed if working from server side and pulling json from Google instead of their client side api
       let userPosition = place.geometry.location;
       let searchLatitude = userPosition.lat();
       let searchLongitude = userPosition.lng();
@@ -103,10 +103,19 @@ function fetchHikingProjectData(lat, lon) {
   console.log(searchUrl);
   fetch(searchUrl)
     .then(function(response) {
-      return response.json();
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error(
+          "A problem has occurred fetching the Hiking Project data."
+        );
+      }
     })
     .then(function(hikingData) {
       goHiking(hikingData);
+    })
+    .catch(function(error) {
+      console.log(error);
     });
 }
 
@@ -118,9 +127,12 @@ function goHiking(data) {
       { scrollTop: $("#activity-hiking").offset().top },
       1000
     );
+
+    // This is to randomly sort the json data in order to get different results, for better performance should implement Fisher–Yates shuffle
     data.trails.sort(function() {
       return 0.5 - Math.random();
     });
+
     $(".destination-card").remove();
     $(".destination-cards-container").show();
     if (data.trails.length > 4) {
