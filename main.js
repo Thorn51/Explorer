@@ -246,7 +246,8 @@ function initDestinationMaps() {
   var map2 = new google.maps.Map(document.getElementById("map2"), {
     zoom: 12,
     disableDefaultUI: true,
-    center: hike1
+    center: hike1,
+    mapTypeId: "terrain"
   });
   var marker = new google.maps.Marker({ position: hike1, map: map2 });
 
@@ -255,7 +256,8 @@ function initDestinationMaps() {
   var map3 = new google.maps.Map(document.getElementById("map3"), {
     zoom: 12,
     disableDefaultUI: true,
-    center: hike2
+    center: hike2,
+    mapTypeId: "terrain"
   });
   var marker = new google.maps.Marker({ position: hike2, map: map3 });
 
@@ -264,7 +266,8 @@ function initDestinationMaps() {
   var map4 = new google.maps.Map(document.getElementById("map4"), {
     zoom: 12,
     disableDefaultUI: true,
-    center: hike3
+    center: hike3,
+    mapTypeId: "terrain"
   });
   var marker = new google.maps.Marker({ position: hike3, map: map4 });
 
@@ -273,7 +276,8 @@ function initDestinationMaps() {
   var map5 = new google.maps.Map(document.getElementById("map5"), {
     zoom: 12,
     disableDefaultUI: true,
-    center: hike4
+    center: hike4,
+    mapTypeId: "terrain"
   });
   var marker = new google.maps.Marker({ position: hike4, map: map5 });
 
@@ -282,7 +286,8 @@ function initDestinationMaps() {
   var map6 = new google.maps.Map(document.getElementById("map6"), {
     zoom: 12,
     disableDefaultUI: true,
-    center: hike5
+    center: hike5,
+    mapTypeId: "terrain"
   });
   var marker = new google.maps.Marker({ position: hike5, map: map6 });
 }
