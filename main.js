@@ -241,19 +241,50 @@ function Hike(mapNumber, name, id, lat, lon) {
 // Initialize maps for destination cards
 
 function initDestinationMaps() {
+  // Destination card 1 map
   var hike1 = { lat: markerData[0].lat, lng: markerData[0].lon };
   var map2 = new google.maps.Map(document.getElementById("map2"), {
-    zoom: 15,
+    zoom: 12,
+    disableDefaultUI: true,
     center: hike1
   });
   var marker = new google.maps.Marker({ position: hike1, map: map2 });
 
+  // Destination card 2 map
   var hike2 = { lat: markerData[1].lat, lng: markerData[1].lon };
   var map3 = new google.maps.Map(document.getElementById("map3"), {
-    zoom: 15,
+    zoom: 12,
+    disableDefaultUI: true,
     center: hike2
   });
   var marker = new google.maps.Marker({ position: hike2, map: map3 });
+
+  // Destination card 3 map
+  var hike3 = { lat: markerData[2].lat, lng: markerData[2].lon };
+  var map4 = new google.maps.Map(document.getElementById("map4"), {
+    zoom: 12,
+    disableDefaultUI: true,
+    center: hike3
+  });
+  var marker = new google.maps.Marker({ position: hike3, map: map4 });
+
+  // Destination card 4 map
+  var hike4 = { lat: markerData[3].lat, lng: markerData[3].lon };
+  var map5 = new google.maps.Map(document.getElementById("map5"), {
+    zoom: 12,
+    disableDefaultUI: true,
+    center: hike4
+  });
+  var marker = new google.maps.Marker({ position: hike4, map: map5 });
+
+  // Destination card 5 map
+  var hike5 = { lat: markerData[4].lat, lng: markerData[4].lon };
+  var map6 = new google.maps.Map(document.getElementById("map6"), {
+    zoom: 12,
+    disableDefaultUI: true,
+    center: hike5
+  });
+  var marker = new google.maps.Marker({ position: hike5, map: map6 });
 }
 
 // document ready
