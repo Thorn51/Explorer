@@ -142,7 +142,7 @@ function goHiking(data) {
     $(".destination-cards-container").show();
 
     // I created two for loops in order to avoid problems with smaller than expected data sets
-    if (data.trails.length > 4) {
+    if (data.trails.length < 4) {
       for (let i = 0; i < 5; i++) {
         // Map canvas number
         mapNumber++;
@@ -164,7 +164,7 @@ function goHiking(data) {
             <div class="destination-details">
               <div class="details-container"> 
                 <div class="hike-image-container">
-                  <img src="${data.trails[i].imgSmall}">
+                  <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
                 </div>
                 <div class="information"</div>
                   <p><span>Summary:</span> ${data.trails[i].summary}</p>
@@ -184,7 +184,17 @@ function goHiking(data) {
       }
     } else {
       // Second for loop
-      for (let i = 0; i < data.trails.length; i++) {
+      for (let i = 0; i < 5; i++) {
+        mapNumber++;
+
+        markerData[i] = new Hike(
+          Number(`${mapNumber}`),
+          `${data.trails[i].name}`,
+          Number(`${data.trails[i].id}`),
+          Number(`${data.trails[i].latitude}`),
+          Number(`${data.trails[i].longitude}`)
+        );
+
         $(".destination-options").append(
           `
           <div class="destination-card" id="${data.trails[i].id}">
@@ -192,7 +202,7 @@ function goHiking(data) {
             <div class="destination-details">
               <div class="details-container"> 
                 <div class="hike-image-container">
-                  <img src="${data.trails[i].imgSmall}">
+                  <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
                 </div>
                 <div class="information"</div>
                   <p><span>Summary:</span> ${data.trails[i].summary}</p>
