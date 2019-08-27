@@ -119,7 +119,7 @@ function fetchHikingProjectData(lat, lon) {
     });
 }
 
-//User selects hiking activity
+//User selects hiking activity: ToDo: Consider breaking this into multiple functions
 function goHiking(data) {
   console.log(data.trails);
   $("#activity-hiking, .load-more-hiking").on("click", function() {
@@ -133,16 +133,23 @@ function goHiking(data) {
       return 0.5 - Math.random();
     });
 
+    // Remove results from previous destination loads
     $(".destination-card").remove();
+
     $(".destination-cards-container").show();
+
+    // I created two for loops in order to avoid problems with smaller than expected data sets
     if (data.trails.length > 4) {
       for (let i = 0; i < 5; i++) {
+        // Feeding results data into markerData array, intended to be used to place markers on map. Markers not functional yet
         markerData[i] = new Hike(
           `${data.trails[i].name}`,
           `${data.trails[i].id}`,
           `${data.trails[i].latitude}`,
           `${data.trails[i].longitude}`
         );
+
+        // Create DOM elements. This should probably be a separate function
         $(".destination-options").append(
           `
           <div class="destination-card" id="${data.trails[i].id}">
@@ -168,6 +175,7 @@ function goHiking(data) {
         );
       }
     } else {
+      // Second for loop
       for (let i = 0; i < data.trails.length; i++) {
         $(".destination-options").append(
           `
@@ -211,7 +219,7 @@ function selectDestination() {
   });
 }
 
-// Create a new object with data from hiking locations
+// Object constructor that builds data for markerData array
 function Hike(name, id, lat, lon) {
   this.name = name;
   this.id = id;
