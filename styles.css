@@ -414,6 +414,11 @@ span {
   cursor: pointer;
 }
 
+button:hover,
+button:active {
+  border: 2px solid orange;
+}
+
 /* Media Queries */
 
 @media only screen and (min-width: 450px) {

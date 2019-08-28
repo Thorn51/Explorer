@@ -160,7 +160,7 @@ function goHiking(data) {
         $(".destination-options").append(
           `
           <div class="destination-card" id="${data.trails[i].id}">
-            <h2 class="card-title">${data.trails[i].name}</h2>
+            <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
             <div class="destination-details">
               <div class="details-container"> 
                 <div class="hike-image-container">
@@ -198,7 +198,7 @@ function goHiking(data) {
         $(".destination-options").append(
           `
           <div class="destination-card" id="${data.trails[i].id}">
-            <h2 class="card-title">${data.trails[i].name}</h2>
+            <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
             <div class="destination-details">
               <div class="details-container"> 
                 <div class="hike-image-container">
