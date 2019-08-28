@@ -28,8 +28,12 @@
     
     <!-- Map -->
     <div class="map-container">
-      <input id="pac-input" class="controls" type="text" placeholder="Enter area to explore.. state, city, park..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Where do you want to explore?'" ></input>
+      <input id="pac-input" class="controls" type="text" placeholder="Enter an area to explore.. state, city, park..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter an area to explore.. state, city, park...'" ></input>
+      <section class="invalid-search-area" hidden>
+        <p>Please enter a valid search area. For example, you can search by city, state, or even by a national park.</p>
+      </section>
       <div id="map"></div>
+      
     </div>
     
 

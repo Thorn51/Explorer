@@ -216,6 +216,20 @@ body {
   margin: 0 auto 0 auto;
 }
 
+.invalid-search-area {
+  display: none;
+  width: 100%;
+  background: red;
+  border-bottom: 2px solid var(--black);
+}
+
+.invalid-search-area p {
+  color: var(--cream);
+  font-size: 1.2rem;
+  padding: 10px;
+  line-height: 1.4rem;
+}
+
 /* Activity Cards*/
 
 .activities-container {
@@ -280,6 +294,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  border-radius: 10px;
 }
 
 #activity-cycling {
@@ -304,6 +319,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  border-radius: 10px;
 }
 
 #activity-fishing {
@@ -328,6 +344,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  border-radius: 10px;
 }
 
 /* Destination Cards */

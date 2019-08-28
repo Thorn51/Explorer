@@ -28,9 +28,10 @@ function initMap() {
     var places = searchBox.getPlaces();
 
     if (places.length == 0) {
+      $(".invalid-search-area").slideDown();
       return;
     }
-
+    $(".invalid-search-area").hide();
     // Clear out the old markers.
     markers.forEach(function(marker) {
       marker.setMap(null);
