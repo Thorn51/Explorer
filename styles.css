@@ -201,7 +201,8 @@ body {
   color: var(--black);
   font-size: 1rem;
   background: var(--blue);
-  border: solid 4px var(--black);
+  border-top: solid 4px var(--black);
+  border-bottom: solid 4px var(--black);
   font-weight: bold;
 }
 
@@ -234,6 +235,16 @@ body {
 
 .activities-container {
   display: none;
+}
+
+.no-trails {
+  display: none;
+  width: 80%;
+  padding: 10px;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  color: var(--cream);
+  margin: auto;
 }
 
 .activities {
@@ -479,6 +490,11 @@ button:disabled:hover {
     font-size: 1.5rem;
   }
 
+  .no-trails {
+    font-size: 1.4rem;
+    line-height: 2rem;
+  }
+
   .hike-location {
     height: 350px;
   }
@@ -504,5 +520,9 @@ button:disabled:hover {
   .destination-cards-container {
     width: 80%;
     margin: auto;
+  }
+
+  .invalid-search-area p {
+    text-align: center;
   }
 }

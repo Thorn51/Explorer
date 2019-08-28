@@ -80,6 +80,8 @@ function initMap() {
 
     // refocus page to show activity selections
     $("html, body").animate({ scrollTop: $("#map").offset().top }, 1000);
+    $(".no-trails").hide();
+    $(".destination-cards-container").hide();
     $(".activities-container").slideDown("slow");
   });
 }
@@ -137,91 +139,98 @@ function goHiking(data) {
       return 0.5 - Math.random();
     });
 
-    // Remove results from previous destination loads
-    $(".destination-card").remove();
+    console.log(data.trails.length);
 
-    $(".destination-cards-container").show();
-
-    // I created two for loops in order to avoid problems with smaller than expected data sets
-    if (data.trails.length < 4) {
-      for (let i = 0; i < 5; i++) {
-        // Map canvas number
-        mapNumber++;
-
-        // Feeding results data into markerData array, intended to be used to place markers on map. Markers not functional yet
-        markerData[i] = new Hike(
-          Number(`${mapNumber}`),
-          `${data.trails[i].name}`,
-          Number(`${data.trails[i].id}`),
-          Number(`${data.trails[i].latitude}`),
-          Number(`${data.trails[i].longitude}`)
-        );
-
-        // Create DOM elements. This should probably be a separate function
-        $(".destination-options").append(
-          `
-          <div class="destination-card" id="${data.trails[i].id}">
-            <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
-            <div class="destination-details">
-              <div class="details-container"> 
-                <div class="hike-image-container">
-                  <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
-                </div>
-                <section class="information">
-                  <p><span>Summary:</span> ${data.trails[i].summary}</p>
-                  <p><span>Location:</span> ${data.trails[i].location}</p>
-                  <p><span>Length:</span> ${data.trails[i].length} miles</p>
-                  <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
-                  <p><span>High Point:</span> ${data.trails[i].high} feet</p>
-                  <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
-                  <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
-                  <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
-                </section>
-                <div class="hike-location" id="map${mapNumber}"></div>
-            </div>
-          </div>
-          `
-        );
-      }
+    if (data.trails.length === 0) {
+      $(".destination-cards-container").hide();
+      $(".destination-card").remove();
+      $(".no-trails").slideDown();
     } else {
-      // Second for loop
-      for (let i = 0; i < 5; i++) {
-        mapNumber++;
+      $(".no-trails").hide();
+      $(".destination-card").remove();
+      $(".destination-cards-container").show();
+      // I created two for loops in order to avoid problems with smaller than expected data sets
+      if (data.trails.length < 4) {
+        for (let i = 0; i < 5; i++) {
+          // Map canvas number
+          mapNumber++;
 
-        markerData[i] = new Hike(
-          Number(`${mapNumber}`),
-          `${data.trails[i].name}`,
-          Number(`${data.trails[i].id}`),
-          Number(`${data.trails[i].latitude}`),
-          Number(`${data.trails[i].longitude}`)
-        );
+          // Feeding results data into markerData array, intended to be used to place markers on map. Markers not functional yet
+          markerData[i] = new Hike(
+            Number(`${mapNumber}`),
+            `${data.trails[i].name}`,
+            Number(`${data.trails[i].id}`),
+            Number(`${data.trails[i].latitude}`),
+            Number(`${data.trails[i].longitude}`)
+          );
 
-        $(".destination-options").append(
-          `
-          <div class="destination-card" id="${data.trails[i].id}">
-            <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
-            <div class="destination-details">
-              <div class="details-container"> 
-                <div class="hike-image-container">
-                  <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
-                </div>
-                <section class="information">
-                  <p><span>Summary:</span> ${data.trails[i].summary}</p>
-                  <p><span>Location:</span> ${data.trails[i].location}</p>
-                  <p><span>Length:</span> ${data.trails[i].length} miles</p>
-                  <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
-                  <p><span>High Point:</span> ${data.trails[i].high} feet</p>
-                  <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
-                  <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
-                  <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
-                </section>
-                <div class="hike-location" id="map${mapNumber}"></div>
+          // Create DOM elements. This should probably be a separate function
+          $(".destination-options").append(
+            `
+            <div class="destination-card" id="${data.trails[i].id}">
+              <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
+              <div class="destination-details">
+                <div class="details-container"> 
+                  <div class="hike-image-container">
+                    <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
+                  </div>
+                  <section class="information">
+                    <p><span>Summary:</span> ${data.trails[i].summary}</p>
+                    <p><span>Location:</span> ${data.trails[i].location}</p>
+                    <p><span>Length:</span> ${data.trails[i].length} miles</p>
+                    <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
+                    <p><span>High Point:</span> ${data.trails[i].high} feet</p>
+                    <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
+                    <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
+                    <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                  </section>
+                  <div class="hike-location" id="map${mapNumber}"></div>
+              </div>
             </div>
-          </div>
-          `
-        );
+            `
+          );
+        }
+      } else {
+        // Second for loop
+        for (let i = 0; i < 5; i++) {
+          mapNumber++;
+
+          markerData[i] = new Hike(
+            Number(`${mapNumber}`),
+            `${data.trails[i].name}`,
+            Number(`${data.trails[i].id}`),
+            Number(`${data.trails[i].latitude}`),
+            Number(`${data.trails[i].longitude}`)
+          );
+
+          $(".destination-options").append(
+            `
+            <div class="destination-card" id="${data.trails[i].id}">
+              <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
+              <div class="destination-details">
+                <div class="details-container"> 
+                  <div class="hike-image-container">
+                    <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
+                  </div>
+                  <section class="information">
+                    <p><span>Summary:</span> ${data.trails[i].summary}</p>
+                    <p><span>Location:</span> ${data.trails[i].location}</p>
+                    <p><span>Length:</span> ${data.trails[i].length} miles</p>
+                    <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
+                    <p><span>High Point:</span> ${data.trails[i].high} feet</p>
+                    <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
+                    <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
+                    <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                  </section>
+                  <div class="hike-location" id="map${mapNumber}"></div>
+              </div>
+            </div>
+            `
+          );
+        }
       }
     }
+
     selectDestination();
   });
 }
