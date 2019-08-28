@@ -256,7 +256,6 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  cursor: pointer;
 }
 
 #activity-camping {
@@ -353,7 +352,6 @@ body {
   flex-wrap: wrap;
   height: 100%;
   width: 100%;
-  cursor: pointer;
 }
 
 .destination-card {
@@ -411,6 +409,9 @@ span {
   margin: 0 auto 25px auto;
   border: 2px solid var(--cream);
   border-radius: 15px;
+}
+
+button {
   cursor: pointer;
 }
 
