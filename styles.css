@@ -411,12 +411,21 @@ span {
   border-radius: 15px;
 }
 
+/* Button behavior */
 button {
   cursor: pointer;
 }
 
 button:hover {
   border: 2px solid orange;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+button:disabled:hover {
+  border: 2px solid var(--blue);
 }
 
 /* Media Queries */
