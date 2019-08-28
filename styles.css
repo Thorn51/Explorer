@@ -414,8 +414,7 @@ span {
   cursor: pointer;
 }
 
-button:hover,
-button:active {
+button:hover {
   border: 2px solid orange;
 }
 

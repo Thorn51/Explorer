@@ -166,7 +166,7 @@ function goHiking(data) {
                 <div class="hike-image-container">
                   <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
                 </div>
-                <div class="information"</div>
+                <section class="information">
                   <p><span>Summary:</span> ${data.trails[i].summary}</p>
                   <p><span>Location:</span> ${data.trails[i].location}</p>
                   <p><span>Length:</span> ${data.trails[i].length} miles</p>
@@ -175,7 +175,7 @@ function goHiking(data) {
                   <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
                   <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
-                </div>
+                </section>
                 <div class="hike-location" id="map${mapNumber}"></div>
             </div>
           </div>
@@ -204,7 +204,7 @@ function goHiking(data) {
                 <div class="hike-image-container">
                   <img src="${data.trails[i].imgSmall}" alt="Image from ${data.trails[i].name} trail">
                 </div>
-                <div class="information"</div>
+                <section class="information">
                   <p><span>Summary:</span> ${data.trails[i].summary}</p>
                   <p><span>Location:</span> ${data.trails[i].location}</p>
                   <p><span>Length:</span> ${data.trails[i].length} miles</p>
@@ -213,7 +213,7 @@ function goHiking(data) {
                   <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
                   <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                   <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
-                </div>
+                </section>
                 <div class="hike-location" id="map${mapNumber}"></div>
             </div>
           </div>
