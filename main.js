@@ -168,7 +168,7 @@ function goHiking(data) {
           $(".destination-options").append(
             `
             <div class="destination-card" id="${data.trails[i].id}">
-              <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
+              <button type="button" class="card-title" role="button"><h2>${data.trails[i].name}</h2></button>
               <div class="destination-details">
                 <div class="details-container"> 
                   <div class="hike-image-container">
@@ -182,7 +182,7 @@ function goHiking(data) {
                     <p><span>High Point:</span> ${data.trails[i].high} feet</p>
                     <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
                     <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
-                    <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                    <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank" role="link">More Info</a></p>
                   </section>
                   <div class="hike-location" id="map${mapNumber}"></div>
               </div>
@@ -206,7 +206,7 @@ function goHiking(data) {
           $(".destination-options").append(
             `
             <div class="destination-card" id="${data.trails[i].id}">
-              <button type="button" class="card-title"><h2>${data.trails[i].name}</h2></button>
+              <button type="button" class="card-title" role="button"><h2>${data.trails[i].name}</h2></button>
               <div class="destination-details">
                 <div class="details-container"> 
                   <div class="hike-image-container">
@@ -220,7 +220,7 @@ function goHiking(data) {
                     <p><span>High Point:</span> ${data.trails[i].high} feet</p>
                     <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
                     <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
-                    <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank">More Info</a></p>
+                    <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank" role="link">More Info</a></p>
                   </section>
                   <div class="hike-location" id="map${mapNumber}"></div>
               </div>

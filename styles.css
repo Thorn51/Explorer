@@ -162,7 +162,7 @@ body {
   background-position: center;
   background-size: cover;
   height: 35vh;
-  width: 100vw;
+  width: 100%;
 }
 
 .hero-text-container {
@@ -201,9 +201,9 @@ body {
   color: var(--black);
   font-size: 1rem;
   background: var(--blue);
-  border-top: solid 4px var(--black);
-  border-bottom: solid 4px var(--black);
+  border: none;
   font-weight: bold;
+  margin: 5px 0 5px 0;
 }
 
 ::placeholder {

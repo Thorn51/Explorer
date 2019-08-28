@@ -19,7 +19,7 @@
   <body>
     
     <!-- HERO -->
-    <div class="hero-container">
+    <div class="hero-container" role="banner">
       <div class="hero-text-container">
         <h1 class="hero-title">Explorer</h1>
         <h3 class="hero-tagline">find today's outdoor adventure...</h3>
@@ -28,8 +28,8 @@
     
     <!-- Map -->
     <div class="map-container">
-      <input id="pac-input" class="controls" type="text" placeholder="Enter an area to explore.. state, city, park..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter an area to explore.. state, city, park...'" ></input>
-      <section class="invalid-search-area" hidden>
+      <input id="pac-input" class="controls" type="text" placeholder="Enter an area to explore" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter an area to explore'" ></input>
+      <section class="invalid-search-area" role="alert" hidden>
         <p>Please enter a valid search area. For example, you can search by city, state, or even by a national park.</p>
       </section>
       <div id="map"></div>
@@ -39,9 +39,9 @@
 <!-- Activities  -->
       
       <div class="activities-container">
-        <h2 class="instructions">What do you want to do?</h2>
+        <h2 class="instructions" role="heading">What do you want to do?</h2>
         <section class="activities">
-          <button type="button" class="card" id="activity-hiking">
+          <button type="button" class="card" id="activity-hiking" role="button">
             <h2 class="card-title">Go Hiking</h2>
           </button>
           <button type="button" class="card" id="activity-camping" disabled>
@@ -56,17 +56,17 @@
         </section>
       </div>
 
-      <section class="no-trails">
-        <p>Sorry, but it doesn't appear that we have any hiking trails in your search area. Please enter a new search area above and we'll do our best to find you a place to go hiking. Hiking data is currently restricted to the United States.</p>
+      <section class="no-trails" role="alert">
+        <p>Sorry, but it doesn't appear that we have any hiking trails in your search area. Please enter a new search in the box above the map and we'll do our best to find you a place to go hiking. Hiking data is currently restricted to the United States.</p>
       </section>
    
    
    
     <div class="destination-cards-container">
-      <h3 class=instructions>Select your destination</h3>
+      <h3 class="instructions" role="heading">Select your destination</h3>
       <section class="destination-options">
       </section>
-      <button type="button" class="load-more-hiking">
+      <button type="button" class="load-more-hiking" role="button">
         <h2>Load More Trails</h2>
       </button>
     </div>
