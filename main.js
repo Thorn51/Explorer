@@ -238,13 +238,24 @@ function goHiking(data) {
 // User selects destination
 function selectDestination() {
   $(".destination-card").on("click", function(event) {
-    $(event.currentTarget)
-      .children()
-      .slideDown("slow");
-    $(event.currentTarget)
-      .siblings()
-      .children(".destination-details")
-      .slideUp();
+    if (
+      $(event.currentTarget)
+        .children(".destination-details")
+        .css("display") == "none"
+    ) {
+      $(event.currentTarget)
+        .children()
+        .slideDown("slow");
+      $(event.currentTarget)
+        .siblings()
+        .children(".destination-details")
+        .slideUp();
+    } else {
+      $(event.currentTarget)
+        .children(".destination-details")
+        .slideUp("slow");
+    }
+
     initDestinationMaps();
   });
 }
