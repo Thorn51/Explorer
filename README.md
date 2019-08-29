@@ -8,4 +8,4 @@ The purpose of this app is to utilize APIs to explore outdoor recreation opportu
 
 ## Demo
 
-- [Explorer](http://thorn51.github.io/explorer)
+- [Explorer- http://thorn51.github.io/explorer](http://thorn51.github.io/explorer)
