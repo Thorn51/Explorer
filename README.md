@@ -16,3 +16,10 @@ The purpose of this app is to utilize APIs to explore outdoor recreation opportu
 ![Explorer Hero](/assets/explorer-screenshot-2.png)
 ![Explorer Hero](/assets/explorer-screenshot-3.png)
 ![Explorer Hero](/assets/explorer-screenshot-4.png)
+
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- jQuery
