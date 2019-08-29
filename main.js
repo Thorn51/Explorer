@@ -178,7 +178,6 @@ function goHiking(data) {
                     <p><span>Length:</span> ${data.trails[i].length} miles</p>
                     <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
                     <p><span>High Point:</span> ${data.trails[i].high} feet</p>
-                    <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
                     <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                     <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank" role="link">More Info</a></p>
                   </section>
@@ -216,7 +215,6 @@ function goHiking(data) {
                     <p><span>Length:</span> ${data.trails[i].length} miles</p>
                     <p><span>Elevation Gain:</span> ${data.trails[i].ascent} feet</p>
                     <p><span>High Point:</span> ${data.trails[i].high} feet</p>
-                    <p><span>Difficulty:</span> ${data.trails[i].difficulty}</p>
                     <p><span>User Rating:</span> ${data.trails[i].stars}/5 Stars</p>
                     <p><span>Powered by Hiking Project:</span> <a href="${data.trails[i].url}" target="_blank" role="link">More Info</a></p>
                   </section>
