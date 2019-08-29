@@ -12,4 +12,4 @@ The purpose of this app is to utilize APIs to explore outdoor recreation opportu
 
 ## Screenshots
 
-![Explorer Hero](assets\explorer-screenshot.png)
+![Explorer Hero](explorer-screenshot.png)
