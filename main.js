@@ -13,7 +13,7 @@ function initMap() {
   // Create the search box and link it to the UI element.
   var input = document.getElementById("pac-input");
   var searchBox = new google.maps.places.SearchBox(input);
-  console.log(input);
+
   // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
   // Bias the SearchBox results towards current map's viewport.
@@ -105,7 +105,6 @@ function fetchHikingProjectData(lat, lon) {
   };
   let endPoint = formatQueryParams(params);
   let searchUrl = hikingProjectApi.baseUrl + endPoint;
-  console.log(searchUrl);
   fetch(searchUrl)
     .then(function(response) {
       if (response.ok) {
@@ -126,7 +125,6 @@ function fetchHikingProjectData(lat, lon) {
 
 //User selects hiking activity: ToDo: Consider breaking this into multiple functions
 function goHiking(data) {
-  console.log(data.trails);
   $("#activity-hiking, .load-more-hiking").on("click", function() {
     let mapNumber = 1;
     $("html, body").animate(
@@ -138,8 +136,6 @@ function goHiking(data) {
     data.trails.sort(function() {
       return 0.5 - Math.random();
     });
-
-    console.log(data.trails.length);
 
     if (data.trails.length === 0) {
       $(".destination-cards-container").hide();
