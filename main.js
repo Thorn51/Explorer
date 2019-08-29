@@ -1,7 +1,7 @@
-//Store data from the list of hikes generated in destination section. The intent here is to feed back to Google maps for markers
+//Store data from the list of hikes generated in destination section.
 let markerData = [];
 
-// Initialize Google Maps and utilize Google places
+// Initialize main map, and utilize Google places API
 function initMap() {
   var map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 37.0902, lng: -95.7129 },
@@ -28,6 +28,7 @@ function initMap() {
     var places = searchBox.getPlaces();
 
     if (places.length == 0) {
+      // Insert a message for invalid search
       $(".invalid-search-area").slideDown();
       return;
     }
@@ -132,7 +133,7 @@ function goHiking(data) {
       1000
     );
 
-    // This is to randomly sort the json data in order to get different results, for better performance should implement Fisher–Yates shuffle
+    // This is to randomly sort the json data in order to get different results, for better performance look to implement Fisher–Yates shuffle
     data.trails.sort(function() {
       return 0.5 - Math.random();
     });
@@ -145,13 +146,14 @@ function goHiking(data) {
       $(".no-trails").hide();
       $(".destination-card").remove();
       $(".destination-cards-container").show();
+
       // I created two for loops in order to avoid problems with smaller than expected data sets
       if (data.trails.length < 4) {
         for (let i = 0; i < 5; i++) {
-          // Map canvas number
+          // Used to generate map canvas number for destination cards
           mapNumber++;
 
-          // Feeding results data into markerData array, intended to be used to place markers on map. Markers not functional yet
+          // Feeding results data into markerData array, intended to be used to place markers on main map. Markers not functional yet
           markerData[i] = new Hike(
             Number(`${mapNumber}`),
             `${data.trails[i].name}`,
