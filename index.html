@@ -33,12 +33,12 @@
           onfocus="this.value=' '"
           onblur="this.value='Enter an area to explore'"
         />
-        <section class="invalid-search-area" role="alert" hidden>
+        <div class="invalid-search-area" role="alert" hidden>
           <h2>
             Please enter a valid search area. For example, you can search by
             city, state, or even by a national park.
           </h2>
-        </section>
+        </div>
       </div>
     </div>
 
@@ -52,7 +52,7 @@
 
     <div class="activities-container">
       <h2 class="instructions">What do you want to do?</h2>
-      <section class="activities">
+      <div class="activities">
         <button type="button" class="card" id="activity-hiking">
           <span class="card-title"> Go Hiking</span>
         </button>
@@ -65,7 +65,7 @@
         <button type="button" class="card" id="activity-fishing" disabled>
           <span class="card-title">Go Fishing</span>
         </button>
-      </section>
+      </div>
     </div>
 
     <section class="no-trails" role="alert">
@@ -80,7 +80,7 @@
     <!-- Destination Cards -->
     <div class="destination-cards-container">
       <h3 class="instructions">Select your destination</h3>
-      <section class="destination-options"></section>
+      <div class="destination-options"></div>
       <button type="button" class="load-more-hiking">Load More Trails</button>
     </div>
 
