@@ -33,8 +33,9 @@ function initMap() {
       $(".invalid-search-area").slideDown();
       return;
     }
-    $(".map-container").show();
-    document.querySelector(".search-location").textContent = places[0].name;
+    $(".map-container")
+      .show()
+      .prepend(`<h1 class="search-location">${places[0].name}</h1>`);
     $(".invalid-search-area").hide();
     userSearch = places;
     // Clear out the old markers.
