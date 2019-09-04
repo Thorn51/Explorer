@@ -143,7 +143,7 @@ html {
   --tan: rgba(241, 224, 197, 1);
   --cream: rgba(248, 255, 248, 1);
   --overlay-light: rgba(18, 41, 50, 0.3);
-  --overlay-dark: rgba(18, 41, 50, 0.6);
+  --overlay-dark: rgba(18, 41, 50, 0.8);
 }
 
 body {
@@ -161,7 +161,7 @@ body {
   background: url("assets/hero_image-min.jpg");
   background-position: center;
   background-size: cover;
-  height: 35vh;
+  height: 100vh;
   width: 100%;
 }
 
@@ -178,24 +178,29 @@ body {
 }
 
 .hero-tagline {
+  width: 80%;
   font-size: 1.1rem;
-  margin-top: 25px;
-  padding: 0 0 15px 0;
+  text-align: left;
+  line-height: 1.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
-/* Google places map */
-
-.map-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: auto;
+.invalid-search-area {
+  display: none;
+  width: 70%;
+  background: red;
+  margin: 0 auto 0 auto;
+  padding: 10px 0 10px 0;
+  margin-bottom: 15px;
+  line-height: 1.4rem;
+  font-size: 1.2rem;
 }
 
 #pac-input {
-  width: 100%;
+  width: 70%;
   height: 50px;
   text-align: center;
   color: var(--black);
@@ -204,6 +209,7 @@ body {
   border: none;
   font-weight: bold;
   margin: 5px 0 5px 0;
+  border: 3px inset var(--black);
 }
 
 ::placeholder {
@@ -211,24 +217,32 @@ body {
   font-weight: bold;
 }
 
+/* Google places map */
+
+.map-container {
+  display: none;
+  width: 100%;
+}
+
+.search-location {
+  color: var(--cream);
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 2.5rem;
+  width: 100%;
+  min-height: 50px;
+  max-height: fit-content;
+  border-top: 5px solid var(--blue);
+  border-bottom: 5px solid var(--blue);
+}
+
 #map {
   height: 250px;
   width: 100%;
   margin: 0 auto 0 auto;
-}
-
-.invalid-search-area {
-  display: none;
-  width: 100%;
-  background: red;
-  border-bottom: 2px solid var(--black);
-}
-
-.invalid-search-area p {
-  color: var(--cream);
-  font-size: 1.2rem;
-  padding: 10px;
-  line-height: 1.4rem;
 }
 
 /* Activity Cards*/
@@ -459,6 +473,11 @@ button:disabled:hover {
 /* Media Queries */
 
 @media only screen and (min-width: 450px) {
+  .hero-tagline {
+    font-size: 1.3rem;
+    line-height: 2rem;
+  }
+
   #map {
     height: 300px;
   }
@@ -512,6 +531,11 @@ button:disabled:hover {
 }
 
 @media only screen and (min-width: 1400px) {
+  .hero-tagline {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
   .activities-container {
     width: 60%;
     margin: auto;

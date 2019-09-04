@@ -1,5 +1,6 @@
 //Store data from the list of hikes generated in destination section.
 let markerData = [];
+let userSearch;
 
 // Initialize main map, and utilize Google places API
 function initMap() {
@@ -32,7 +33,10 @@ function initMap() {
       $(".invalid-search-area").slideDown();
       return;
     }
+    $(".map-container").show();
+    document.querySelector(".search-location").textContent = places[0].name;
     $(".invalid-search-area").hide();
+    userSearch = places;
     // Clear out the old markers.
     markers.forEach(function(marker) {
       marker.setMap(null);
@@ -80,7 +84,10 @@ function initMap() {
     map.fitBounds(bounds);
 
     // refocus page to show activity selections
-    $("html, body").animate({ scrollTop: $("#map").offset().top }, 1000);
+    $("html, body").animate(
+      { scrollTop: $(".map-container").offset().top },
+      1000
+    );
     $(".no-trails").hide();
     $(".destination-cards-container").hide();
     $(".activities-container").slideDown("slow");
