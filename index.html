@@ -43,52 +43,61 @@
       </div>
     </div>
 
-    <!-- Map -->
-    <h1 class="search-location">Find an adventure today!</h1>
-    <div class="map-container">
-      <div id="map"></div>
-    </div>
+    <!-- Header -->
 
-    <!-- Activities  -->
+    <main>
+      <header>
+        <h1 class="search-location">Find an adventure today!</h1>
+      </header>
 
-    <div class="activities-container">
-      <h2 id="json-error-message">
-        Sorry, but we can't access the data you are looking for. This is most
-        likely an internet connect issue. Please check your connection and try
-        again later
-      </h2>
-      <h2 class="instructions">What do you want to do?</h2>
-      <div class="activities">
-        <button type="button" class="card" id="activity-hiking">
-          <span class="card-title"> Go Hiking</span>
-        </button>
-        <button type="button" class="card" id="activity-camping" disabled>
-          <span class="card-title">Go Camping</span>
-        </button>
-        <button type="button" class="card" id="activity-cycling" disabled>
-          <span class="card-title">Go Cycling</span>
-        </button>
-        <button type="button" class="card" id="activity-fishing" disabled>
-          <span class="card-title">Go Fishing</span>
-        </button>
+      <!-- Map -->
+
+      <div class="map-container">
+        <div id="map"></div>
       </div>
-    </div>
 
-    <section class="no-trails" role="alert">
-      <h2 class="no-trails-heading">No Trails...</h2>
-      <p>
-        Sorry, but it doesn't appear that we have any hiking trails in your
-        search area. Please try again, and we'll do our best to find you a place
-        to go hiking. Hiking data is currently restricted to the United States.
-      </p>
-    </section>
+      <!-- Activities  -->
 
-    <!-- Destination Cards -->
-    <div class="destination-cards-container">
-      <h3 class="instructions">Select your destination</h3>
-      <div class="destination-options"></div>
-      <button type="button" class="load-more-hiking">Load More Trails</button>
-    </div>
+      <div class="activities-container">
+        <h2 id="json-error-message">
+          Sorry, but we can't access the data you are looking for. This is most
+          likely an internet connect issue. Please check your connection and try
+          again later.
+        </h2>
+        <h2 class="instructions">What do you want to do?</h2>
+        <div class="activities">
+          <button type="button" class="card" id="activity-hiking">
+            <span class="card-title"> Go Hiking</span>
+          </button>
+          <button type="button" class="card" id="activity-camping" disabled>
+            <span class="card-title">Go Camping</span>
+          </button>
+          <button type="button" class="card" id="activity-cycling" disabled>
+            <span class="card-title">Go Cycling</span>
+          </button>
+          <button type="button" class="card" id="activity-fishing" disabled>
+            <span class="card-title">Go Fishing</span>
+          </button>
+        </div>
+      </div>
+
+      <section class="no-trails" role="alert">
+        <h2 class="no-trails-heading">No Trails...</h2>
+        <p>
+          Sorry, but it doesn't appear that we have any hiking trails in your
+          search area. Please try again, and we'll do our best to find you a
+          place to go hiking. Hiking data is currently restricted to the United
+          States.
+        </p>
+      </section>
+
+      <!-- Destination Cards -->
+      <div class="destination-cards-container">
+        <h3 class="instructions">Select your destination</h3>
+        <div class="destination-options"></div>
+        <button type="button" class="load-more-hiking">Load More Trails</button>
+      </div>
+    </main>
 
     <!-- Scripts -->
     <script
