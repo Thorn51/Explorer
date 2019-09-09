@@ -35,14 +35,16 @@
         />
         <div class="invalid-search-area" role="alert" hidden>
           <h2>
-            Please enter a valid search area. For example, you can search by
-            city, state, or even by a national park.
+            A problem has occurred. Please check that you have internet access.
+            If you do, please enter a valid search using a city, state, or zip
+            code.
           </h2>
         </div>
       </div>
     </div>
 
     <!-- Map -->
+    <h1 class="search-location">Find an adventure today!</h1>
     <div class="map-container">
       <div id="map"></div>
     </div>
@@ -50,6 +52,11 @@
     <!-- Activities  -->
 
     <div class="activities-container">
+      <h2 id="json-error-message">
+        Sorry, but we can't access the data you are looking for. This is most
+        likely an internet connect issue. Please check your connection and try
+        again later
+      </h2>
       <h2 class="instructions">What do you want to do?</h2>
       <div class="activities">
         <button type="button" class="card" id="activity-hiking">

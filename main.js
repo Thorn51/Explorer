@@ -33,9 +33,12 @@ function initMap() {
       $(".invalid-search-area").slideDown();
       return;
     }
-    $(".map-container")
+
+    $(".map-container").show();
+    $(".search-location")
       .show()
-      .prepend(`<h1 class="search-location">${places[0].name}</h1>`);
+      .text(`${places[0].formatted_address}`);
+
     $(".invalid-search-area").hide();
     userSearch = places;
     // Clear out the old markers.
@@ -48,7 +51,6 @@ function initMap() {
     var bounds = new google.maps.LatLngBounds();
     places.forEach(function(place) {
       if (!place.geometry) {
-        console.log("Returned place contains no geometry");
         return;
       }
       var icon = {
@@ -86,7 +88,7 @@ function initMap() {
 
     // refocus page to show activity selections
     $("html, body").animate(
-      { scrollTop: $(".map-container").offset().top },
+      { scrollTop: $(".search-location").offset().top },
       1000
     );
     $(".no-trails").hide();
@@ -117,10 +119,11 @@ function fetchHikingProjectData(lat, lon) {
   fetch(searchUrl)
     .then(function(response) {
       if (response.ok) {
+        $("#json-error-message").hide();
         return response.json();
       } else {
         throw new Error(
-          "A problem has occurred fetching the Hiking Project data."
+          "A problem has occurred getting the hiking data. This is most likely an internet connection issue."
         );
       }
     })
@@ -128,7 +131,7 @@ function fetchHikingProjectData(lat, lon) {
       goHiking(hikingData);
     })
     .catch(function(error) {
-      console.log(error);
+      $("#json-error-message").show();
     });
 }
 
@@ -329,7 +332,6 @@ function initDestinationMaps() {
 
 // document ready
 $(document).ready(function() {
-  console.log("Explorer ready, adventure awaits!");
   $("body").append(
     `<script src=${googleMapsApi.scriptSrc} async defer><script>`
   );

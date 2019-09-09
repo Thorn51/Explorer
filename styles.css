@@ -190,13 +190,14 @@ body {
 
 .invalid-search-area {
   display: none;
-  width: 70%;
+  width: 60%;
   background: red;
   margin: 0 auto 0 auto;
-  padding: 10px 0 10px 0;
+  padding: 10px 10px 10px 10px;
   margin-bottom: 15px;
   line-height: 1.4rem;
   font-size: 1.2rem;
+  text-align: left;
 }
 
 #pac-input {
@@ -225,6 +226,7 @@ body {
 }
 
 .search-location {
+  display: none;
   color: var(--cream);
   font-size: 2rem;
   font-weight: bolder;
